@@ -36,7 +36,7 @@ var summaryTable = "<table><tr><th>Donors</th><td>" + donors.length + "</td></tr
 
 
 
-document.getElementById('donationSummary').innerHTML = summaryTable;
+document.getElementById("donationSummary").innerHTML = summaryTable;
 
 var majorDonors = donors.filter(findMajorDonors);
 
