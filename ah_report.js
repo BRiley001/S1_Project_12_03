@@ -28,26 +28,34 @@
       
 */
 
+// The donations total sum starts at 0
 var donationTotal = 0;
 
+// For each donor the calcSum function will find the sum of the donations
 donors.forEach(calcSum);
 
+// The summaryTable contains a text sting that will be used to create the table at the top, with total donors and donation totals
 var summaryTable = "<table><tr><th>Donors</th><td>" + donors.length + "</td></tr><tr><th>Total Donations</th><td>$" + donationTotal.toLocaleString() + "</td></tr></table>";
 
-
-
+// The page will have the text string from above inserted into the divs.
 document.getElementById("donationSummary").innerHTML = summaryTable;
 
+// The majorDonors variable will filter the array and find all the major donors
 var majorDonors = donors.filter(findMajorDonors);
 
+// The array will be sorted in descending order
 majorDonors.sort(donorSortDescending);
 
+// The main table with donor information is contained in the text string below. 
 var donorTable = "<table><caption>Major Donors</caption><tr><th>Donation</th><th>Donor ID</th> <th>Date</th><th>Name</th><th>Address</th><th>Phone</th><th>E-mail</th></tr>";
 
+//For each of the major donors it will write a row into the table
 majorDonors.forEach(writeDonorRow);
 
+// The donorTable is ended here
 donorTable += "</table>";
 
+// The text string, which contains all the donors information, is added into the page
 document.getElementById("donorTable").innerHTML = donorTable;
 //BELOW WAS PREMADE
 function calcSum(donorAmt) {
